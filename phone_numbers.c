@@ -24,6 +24,8 @@ int main() {
     fputs(phone, finalFile);
     fputs("\n", finalFile);
  
+
+ 
   }
   
 }
