@@ -1,0 +1,188 @@
+# Author: Jing Wang, for Program Design
+# try_rec is a Unix shell script that will be used to test project 8.
+# To use the script, copy it into the same directory as your scource file
+# Set execute permission for the file by issuing the command:
+# chmod +x try_rec
+# Compile your program, producing a.out as the executable
+# To run the script, type
+# ./try_rec
+# The user input from the script will not be shown on the screen.
+# Compare the results from your program with the expected results on the test cases.
+echo '===================================================='
+./a.out <<-EndOfInput
+d
+sp_gurgen@yahoo.com
+dance
+Kohar
+Gurgen
+p
+d
+1987tec@gmail.com
+dance
+Tanja
+Stina
+p
+d
+yewande_1965@yahoo.com
+tennis
+Yewande
+Sakura
+p
+a
+jr765@gmail.com
+art
+Jean
+Reagan
+a
+sddpash@aol.com
+tennis
+Ashley
+Spires
+a
+tdwinn007@icould.com
+dance
+Whee
+Winn
+a
+mantchev_lisa@gmail.com
+tennis
+Lisa
+Mantchev
+a
+mantchev_lisa@gmail.com
+dance
+Lisa
+Mantchev
+p
+a
+mantchev_lisa@gmail.com
+tennis
+Lisa
+Mantchev
+p
+q
+EndOfInput
+echo '----------------------------------------------------'
+echo 'Expected:'
+echo 'Enter operation code: d'
+echo 'Enter email: sp_gurgen@yahoo.com'
+echo 'Enter class: dance'
+echo 'Enter first name: Kohar'
+echo 'Enter last name: Gurgen'
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter opertion code: p'
+echo 'hello_789@gmail.com                               Anahit         Ari                      dance'
+echo 'eve8911@gmail.com                                 Jeanette       Lea                      skate'
+echo '1987tec@gmail.com                                 Tanja          Stina                    dance'
+echo 'nadryl477@aol.com                                 Julie          Georgia                  dance'
+echo 'helena8769@gmail.com                              Helena         Ingrid                     art'
+echo 'naoko_8811@gmail.com                              Jun            Naoko                   karate'
+echo 'yewande_1965@yahoo.com                            Yewande        Sakura                   dance'
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter operation code: d'
+echo 'Enter email: 1987tec@gmail.com'
+echo 'Enter class: dance'
+echo 'Enter first name: Tanja'
+echo 'Enter last name: Stina'
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter opertion code: p'
+echo 'hello_789@gmail.com                               Anahit         Ari                      dance'
+echo 'eve8911@gmail.com                                 Jeanette       Lea                      skate'
+echo 'nadryl477@aol.com                                 Julie          Georgia                  dance'
+echo 'helena8769@gmail.com                              Helena         Ingrid                     art'
+echo 'naoko_8811@gmail.com                              Jun            Naoko                   karate'
+echo 'yewande_1965@yahoo.com                            Yewande        Sakura                   dance'
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter operation code: d'
+echo 'Enter email: yewande_1965@yahoo.com'
+echo 'Enter class: tennis'
+echo 'Enter first name: Yewande'
+echo 'Enter last name: Sakura'
+echo 'Output: request not found'
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter operation code: p'
+echo 'hello_789@gmail.com                               Anahit         Ari                      dance'
+echo 'eve8911@gmail.com                                 Jeanette       Lea                      skate'
+echo 'nadryl477@aol.com                                 Julie          Georgia                  dance'
+echo 'helena8769@gmail.com                              Helena         Ingrid                     art'
+echo 'naoko_8811@gmail.com                              Jun            Naoko                   karate'
+echo 'yewande_1965@yahoo.com                            Yewande        Sakura                   dance'
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter operation code: a'
+echo 'Enter email: jr765@gmail.com'
+echo 'Enter class: art'
+echo 'Enter first name: Jean'
+echo 'Enter last name: Reagan'
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter operation code: a'
+echo 'Enter email: sddpash@aol.com'
+echo 'Enter class: tennis'
+echo 'Enter child first name: Ashley'
+echo 'Enter child last name: Spires'
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter operation code: a'
+echo 'Enter email: tdwinn007@icould.com'
+echo 'Enter classroom: Toddler'
+echo 'Enter child first name: Whee'
+echo 'Enter cild last name: Winn'
+echo 'Enter contact phone number: 766-343-7994'
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter operation code: a'
+echo 'Enter email: mantchev_list@gmail.com'
+echo 'Enter class: tennis' 
+echo 'Enter child first name: Lisa'
+echo 'Enter child last name: Mantchev' 
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter operation code: a'
+echo 'Enter email: mantchev_list@gmail.com'
+echo 'Enter class: dance' 
+echo 'Enter child first name: Lisa'
+echo 'Enter child last name: Mantchev' 
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter operation code: p'
+echo 'hello_789@gmail.com                               Anahit         Ari                      dance'
+echo 'eve8911@gmail.com                                 Jeanette       Lea                      skate'
+echo 'nadryl477@aol.com                                 Julie          Georgia                  dance'
+echo 'helena8769@gmail.com                              Helena         Ingrid                     art'
+echo 'naoko_8811@gmail.com                              Jun            Naoko                   karate'
+echo 'yewande_1965@yahoo.com                            Yewande        Sakura                   dance'
+echo 'jr765@gmail.com                                   Jean           Reagan                     art'
+echo 'sddpash@aol.com                                   Ashley         Spires                  tennis'
+echo 'tdwinn007@icould.com                              Whee           Winn                     dance'
+echo 'mantchev_lisa@gmail.com                           Lisa           Mantchev                tennis'
+echo 'mantchev_lisa@gmail.com                           Lisa           Mantchev                dance'
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter operation code: a'
+echo 'Enter email: mantchev_list@gmail.com'
+echo 'Enter class: tennis' 
+echo 'Enter child first name: Lisa'
+echo 'Enter child last name: Mantchev'
+echo 'Output: request already exists' 
+echo '===================================================='
+echo 'Expected:'
+echo 'Enter operation code: p'
+echo 'hello_789@gmail.com                               Anahit         Ari                      dance'
+echo 'eve8911@gmail.com                                 Jeanette       Lea                      skate'
+echo 'nadryl477@aol.com                                 Julie          Georgia                  dance'
+echo 'helena8769@gmail.com                              Helena         Ingrid                     art'
+echo 'naoko_8811@gmail.com                              Jun            Naoko                   karate'
+echo 'yewande_1965@yahoo.com                            Yewande        Sakura                   dance'
+echo 'jr765@gmail.com                                   Jean           Reagan                     art'
+echo 'sddpash@aol.com                                   Ashley         Spires                  tennis'
+echo 'tdwinn007@icould.com                              Whee           Winn                     dance'
+echo 'mantchev_lisa@gmail.com                           Lisa           Mantchev                tennis'
+echo 'mantchev_lisa@gmail.com                           Lisa           Mantchev                dance'
+echo '===================================================='
+echo 'Enter operation code: q'

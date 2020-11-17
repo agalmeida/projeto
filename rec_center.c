@@ -197,8 +197,8 @@ struct request *append(struct request *list){
  scanf("%s", class_name);
 //search for request match match
  for (cur = list, prev = NULL;
-       cur != NULL && strcmp(cur->email,e_address)!=0 && strcmp(cur->last,l_name)!=0 &&
-	   strcmp(cur->first,f_name)!=0 && strcmp(cur->class,class_name)!=0;
+       cur != NULL && !(strcmp(cur->email,e_address)==0 && strcmp(cur->last,l_name)==0 &&
+	   strcmp(cur->first,f_name)==0 && strcmp(cur->class,class_name)==0);
        prev = cur, cur = cur->next)
     ;
 	if (cur!=NULL||prev==NULL){
