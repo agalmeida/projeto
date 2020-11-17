@@ -35,7 +35,7 @@ int main(void)
   char code;
 
   struct request *wait_list = load();  
-  printf("Operation Code: r for removing from the list, a for appending to the list,"
+  printf("Operation Code: d for removing from the list, a for appending to the list,"
 	  ", p for printing the list; q for quit.\n");
   for (;;) {
     printf("Enter operation code: ");
@@ -98,6 +98,8 @@ struct request *load(){
 			strcpy(new_node->last, l_name);
 			new_node->next = NULL;
 
+
+
 			if(list == NULL)	
 				list = new_node;
 			else
@@ -140,15 +142,85 @@ void save(struct request *list)
 struct request *delete(struct request *list){
 
  //add your code
- 
- return NULL;
+ struct request *cur, *prev;
+ char f_name[NAME_LEN+1];
+ char l_name[NAME_LEN+1];
+ char e_address[EMAIL_LEN+1];
+ char class_name[CLASS_LEN+1];
+ printf("Enter the first name:\n");
+ scanf("%s", f_name);
+ printf("Enter the last name:\n");
+ scanf("%s", l_name);
+ printf("Enter the email address:\n");
+ scanf("%s", e_address);
+ printf("Enter the class name:\n");
+ scanf("%s", class_name);
+ //search for request match match
+ for (cur = list, prev = NULL;
+       cur != NULL && !(strcmp(cur->email,e_address)==0 && strcmp(cur->last,l_name)==0 &&
+	   strcmp(cur->first,f_name)==0 && strcmp(cur->class,class_name)==0);
+       prev = cur, cur = cur->next)
+    ;	
+
+ if (cur == NULL){
+	 printf("Request not found on the list\n");
+	 return list;
+ }
+
+ //deletes the the request if its the first one
+ if (prev==NULL){
+	 list = cur->next;
+ //deletes the request if its another one
+ } else {
+	 prev->next = cur->next;
+ }
+ free(cur);
+ return list;
 
 }
 struct request *append(struct request *list){
 
  //add your code
+ struct request *cur, *prev;
+ struct request *new_node;
+ char f_name[NAME_LEN+1];
+ char l_name[NAME_LEN+1];
+ char e_address[EMAIL_LEN+1];
+ char class_name[CLASS_LEN+1];
+ printf("Enter the first name:\n");
+ scanf("%s", f_name);
+ printf("Enter the last name:\n");
+ scanf("%s", l_name);
+ printf("Enter the email address:\n");
+ scanf("%s", e_address);
+ printf("Enter the class name:\n");
+ scanf("%s", class_name);
+//search for request match match
+ for (cur = list, prev = NULL;
+       cur != NULL && strcmp(cur->email,e_address)!=0 && strcmp(cur->last,l_name)!=0 &&
+	   strcmp(cur->first,f_name)!=0 && strcmp(cur->class,class_name)!=0;
+       prev = cur, cur = cur->next)
+    ;
+	if (cur!=NULL||prev==NULL){
+	printf("This request already exists");
+	return list;
+	} else{
+	  new_node = malloc(sizeof(struct request));
+	  if (new_node == NULL) {
+	    printf("malloc failed in add_to_list\n");
+	    return list;
+	  }
+	  strcpy(new_node->first, f_name);
+	  strcpy(new_node->last, l_name);
+	  strcpy(new_node->email, e_address);
+	  strcpy(new_node->class, class_name);
+	  new_node->next = list;
+	  return new_node;
+}
+
  
- return NULL;
+ 
+ return list;
 
 }
 
@@ -171,8 +243,13 @@ void printList(struct request *list){
 
 void clearList(struct request *list)
 {
-
- //add your code
+    struct request *cur = list, *prev = NULL;
+    while(cur != NULL)
+    {
+        prev = cur;
+        cur = cur->next;
+        free(prev);
+    }
 
 }
 
